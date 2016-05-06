@@ -1,0 +1,15 @@
+*.class
+*.classpath
+*.project
+*/.settings/*
+*/target/*
+*/bin/*
+*/WebContent/*
+
+*/mydb.log*
+.idea/*
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml

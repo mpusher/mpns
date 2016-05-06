@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.shinemo.mpns</groupId>
+        <artifactId>mpns</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.shinemo.mpns</groupId>
+    <artifactId>web</artifactId>
+    <version>${web-version}</version>
+    <packaging>war</packaging>
+    <dependencies>
+
+      <dependency>
+          <groupId>com.shinemo.data</groupId>
+          <artifactId>core</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.velocity</groupId>
+          <artifactId>velocity</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.velocity</groupId>
+        <artifactId>velocity-tools</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.logback-extensions</groupId>
+          <artifactId>logback-ext-spring</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-asl</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>dubbo</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.javassist</groupId>
+        <artifactId>javassist</artifactId>
+      </dependency>
+
+      <dependency>
+        <groupId>com.github.sgroschupf</groupId>
+        <artifactId>zkclient</artifactId>
+      </dependency>
+
+
+
+    </dependencies>
+
+    <build>
+        <finalName>data</finalName>
+
+        <filters>
+          <filter>../conf-${deploy.env}.properties</filter>
+        </filters>
+
+        <resources>
+          <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+              <include>**/*</include>
+            </includes>
+            <filtering>true</filtering>
+          </resource>
+        </resources>
+
+        <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-resources-plugin</artifactId>
+              <version>2.6</version>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.1</version>
+              <configuration>
+                  <source>1.7</source>
+                  <target>1.7</target>
+                  <encoding>UTF-8</encoding>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-war-plugin</artifactId>
+              <version>2.4</version>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.3.7.v20160115</version>
+            <configuration>
+              <scanIntervalSeconds>10</scanIntervalSeconds>
+              <webApp>
+                <contextPath>/mpns</contextPath>
+              </webApp>
+            </configuration>
+          </plugin>
+        </plugins>
+    </build>
+
+</project>
