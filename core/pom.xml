@@ -18,6 +18,16 @@
             <artifactId>dal</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.shinemo.mpns</groupId>
+            <artifactId>client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.shinemo.mpush</groupId>
+            <artifactId>mpush-client</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.caucho</groupId>
             <artifactId>hessian</artifactId>
         </dependency>
@@ -31,12 +41,6 @@
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.shinemo.data</groupId>
-            <artifactId>client</artifactId>
-        </dependency>
-
 
         <dependency>
             <artifactId>zookeeper</artifactId>

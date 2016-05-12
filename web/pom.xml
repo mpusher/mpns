@@ -13,7 +13,7 @@
     <dependencies>
 
       <dependency>
-          <groupId>com.shinemo.data</groupId>
+          <groupId>com.shinemo.mpns</groupId>
           <artifactId>core</artifactId>
       </dependency>
 
@@ -84,7 +84,7 @@
     </dependencies>
 
     <build>
-        <finalName>data</finalName>
+        <finalName>mpns</finalName>
 
         <filters>
           <filter>../conf-${deploy.env}.properties</filter>

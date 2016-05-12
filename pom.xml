@@ -36,17 +36,17 @@
             <!-- 子项目依赖 -->
             <!-- ======================================== -->
             <dependency>
-                <groupId>com.shinemo.data</groupId>
+                <groupId>com.shinemo.mpns</groupId>
                 <artifactId>client</artifactId>
                 <version>${client-version}</version>
             </dependency>
             <dependency>
-                <groupId>com.shinemo.data</groupId>
+                <groupId>com.shinemo.mpns</groupId>
                 <artifactId>dal</artifactId>
                 <version>${dal-version}</version>
             </dependency>
             <dependency>
-                <groupId>com.shinemo.data</groupId>
+                <groupId>com.shinemo.mpns</groupId>
                 <artifactId>core</artifactId>
                 <version>${core-version}</version>
             </dependency>

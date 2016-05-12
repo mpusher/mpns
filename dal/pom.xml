@@ -18,7 +18,6 @@
             <groupId>com.shinemo.mpns</groupId>
             <artifactId>client</artifactId>
         </dependency>
-
         <!--log -->
         <dependency>
             <groupId>org.slf4j</groupId>
