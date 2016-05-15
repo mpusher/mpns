@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.shinemo.mpush.tools.MPushUtil;
+import com.mpush.tools.MPushUtil;
 
 
 public class AuthorizedInterceptor implements HandlerInterceptor{

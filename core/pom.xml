@@ -17,13 +17,14 @@
             <groupId>com.shinemo.mpns</groupId>
             <artifactId>dal</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.shinemo.mpns</groupId>
             <artifactId>client</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.shinemo.mpush</groupId>
+            <groupId>com.mpush</groupId>
             <artifactId>mpush-client</artifactId>
         </dependency>
 

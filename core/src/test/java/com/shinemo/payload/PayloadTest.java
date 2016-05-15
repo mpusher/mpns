@@ -10,9 +10,9 @@ import com.shinemo.mpns.client.mpush.domain.CustomPushPayload;
 import com.shinemo.mpns.client.mpush.domain.NotificationPushPayload;
 import com.shinemo.mpns.client.mpush.domain.PayloadFactory;
 import com.shinemo.mpns.client.mpush.domain.PayloadFactory.MessageType;
-import com.shinemo.mpush.api.PushContent;
-import com.shinemo.mpush.api.PushContent.PushType;
-import com.shinemo.mpush.tools.Jsons;
+import com.mpush.api.PushContent;
+import com.mpush.api.PushContent.PushType;
+import com.mpush.tools.Jsons;
 
 public class PayloadTest {
 	

@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.shinemo.mpns.core.mpush.service.UserService;
-import com.shinemo.mpush.api.RedisKey;
-import com.shinemo.mpush.tools.redis.manage.RedisManage;
+import com.mpush.api.RedisKey;
+import com.mpush.tools.redis.manage.RedisManage;
 
 @Service("userService")
 public class UserServiceImpl  implements UserService {

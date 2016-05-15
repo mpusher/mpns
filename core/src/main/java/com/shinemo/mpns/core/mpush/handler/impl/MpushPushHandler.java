@@ -22,9 +22,9 @@ import com.shinemo.mpns.core.mpush.service.MsgIdService;
 import com.shinemo.mpns.core.mpush.service.impl.MsgIdServiceImpl;
 import com.shinemo.mpns.core.mpush.service.impl.PushServiceImpl;
 import com.shinemo.mpns.core.util.PushTypeUtil;
-import com.shinemo.mpush.api.PushContent;
-import com.shinemo.mpush.api.PushSender;
-import com.shinemo.mpush.push.PushClient;
+import com.mpush.api.PushContent;
+import com.mpush.api.PushSender;
+import com.mpush.push.PushClient;
 
 @Service("mpushPushHandler")
 public class MpushPushHandler implements PushHandler{

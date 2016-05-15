@@ -22,7 +22,7 @@ import com.shinemo.mpns.client.mpush.domain.PushResponse;
 import com.shinemo.mpns.core.jpush.service.JPushService;
 import com.shinemo.mpns.core.jpush.util.JPushUtil;
 import com.shinemo.mpns.dal.config.ConfigCenter;
-import com.shinemo.mpush.api.PushContent.PushType;
+import com.mpush.api.PushContent.PushType;
 
 @Service("jPushService")
 public class JPushServiceImpl implements JPushService{

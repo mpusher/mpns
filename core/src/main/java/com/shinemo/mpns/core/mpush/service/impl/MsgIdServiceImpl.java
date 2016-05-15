@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.shinemo.mpns.core.mpush.service.MsgIdService;
 import com.shinemo.mpns.core.util.DateUtil;
-import com.shinemo.mpush.tools.redis.manage.RedisManage;
+import com.mpush.tools.redis.manage.RedisManage;
 
 @Service("msgIdService")
 public class MsgIdServiceImpl implements MsgIdService {
