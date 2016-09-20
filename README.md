@@ -7,6 +7,7 @@ ps:由于本工程目前依赖的`mpush-client:0.0.4`,还没有发布，
 要先到mpush `git checkout dev`分支,然后执行命令`mvn clean install -Ppub`
 把`mpush-client:0.0.4`安装到本地maven仓库。
 </p>
+
 ## 源码启动
 
 1. 本工程使用`vert.x + spring` 实现，需要了解一些`vert.x`的知识
