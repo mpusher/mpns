@@ -3,8 +3,11 @@
 #### 说明由于该系统是一个偏向业务的系统，所以本工程只是一个样例工程，具体的业务逻辑还需要业务方自己实现。
 
 >ps:由于本工程目前依赖的`mpush-client:0.0.4`还没有发布
+
 >要先到mpush `git checkout dev`分支
+
 >然后执行命令`mvn clean install -Ppub`
+
 >把`mpush-client:0.0.4`安装到本地maven仓库
 
 
