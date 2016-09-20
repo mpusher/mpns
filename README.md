@@ -21,3 +21,8 @@
 6. 查看帮助 `java -jar mpns.jar -h`
 7. 前台启动 `java -jar mpns.jar`
 
+## 对外接口
+1. http://127.0.0.1:8080/api/admin/push.json?userId=user-0&content=test 模拟给指定用户发送push
+2. http://127.0.0.1:8080/api/admin/list/server.json 查询mpush server 列表
+3. http://127.0.0.1:8080/api/admin/list/onlineUser.json?ip=120.23.43.1 查询mpushServer在线用户列表
+
