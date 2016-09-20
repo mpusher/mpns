@@ -147,7 +147,6 @@ public class PushServiceImpl implements PushService {
         logger.info("send to ANPs");
     }
 
-
     private void send2MiPush(String userId, NotifyDO notifyDO) {
         logger.info("send to xiaomi push");
     }
