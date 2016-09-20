@@ -14,7 +14,9 @@
 3. 解压 `tar -zvxf mpns-release.tar.gz`
 4. 后台启动 `java -jar mpns.jar start`
 5. 停止服务 `java -jar mpns.jar stop appId` 
+
   > appId为start后控制台输出的那个字符串
+  
   > 如过不知道appId可以先执行下`java -jar mpns.jar stop` 控制台会输出
 6. 查看帮助 `java -jar mpns.jar -h`
 7. 前台启动 `java -jar mpns.jar`
