@@ -34,5 +34,5 @@
 #### 详细参加`com.mpush.mpns.web.handler.AdminHandler`
 1. http://127.0.0.1:8080/api/admin/push.json?userId=user-0&content=test 模拟给指定用户发送push
 2. http://127.0.0.1:8080/api/admin/list/servers.json 查询mpush server 列表
-3. http://127.0.0.1:8080/api/admin/get/onlineUserNum.json?ip=120.23.43.1 查询mpushServer在线用户列表
+3. http://127.0.0.1:8080/api/admin/get/onlineUserNum.json?ip=120.23.43.1 查询mpushServer在线用户数
 
