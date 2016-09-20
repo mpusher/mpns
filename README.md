@@ -2,6 +2,11 @@
 
 #### 说明由于该系统是一个偏向业务的系统，所以本工程只是一个样例工程，具体的业务逻辑还需要业务方自己实现。
 
+<p style="color:red">
+ps:由于本工程目前依赖的`mpush-client:0.0.4`,还没有发布，
+要先到mpush `git checkout dev`分支,然后执行命令`mvn clean install -Ppub`
+把`mpush-client:0.0.4`安装到本地maven仓库。
+</p>
 ## 源码启动
 
 1. 本工程使用`vert.x + spring` 实现，需要了解一些`vert.x`的知识
@@ -24,6 +29,6 @@
 ## 对外接口
 #### 详细参加`com.mpush.mpns.web.handler.AdminHandler`
 1. http://127.0.0.1:8080/api/admin/push.json?userId=user-0&content=test 模拟给指定用户发送push
-2. http://127.0.0.1:8080/api/admin/list/server.json 查询mpush server 列表
-3. http://127.0.0.1:8080/api/admin/list/onlineUser.json?ip=120.23.43.1 查询mpushServer在线用户列表
+2. http://127.0.0.1:8080/api/admin/list/servers.json 查询mpush server 列表
+3. http://127.0.0.1:8080/api/admin/get/onlineUserNum.json?ip=120.23.43.1 查询mpushServer在线用户列表
 
