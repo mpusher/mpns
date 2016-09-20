@@ -1,6 +1,8 @@
 *.class
 *.classpath
 *.project
+
+*/.DS_Store
 */.settings/
 */target/
 */bin/
@@ -17,6 +19,7 @@
 .mtj.tmp/
 
 # Package Files #
+.DS_Store
 *.jar
 *.war
 *.ear
