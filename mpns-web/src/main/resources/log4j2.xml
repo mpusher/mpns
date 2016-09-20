@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration code="warn">
+    <Appenders>
+        <RollingRandomAccessFile name="APP-ERROR" append="true" fileName="${app.log.dir}/app-error.log"
+                                 filePattern="${app.log.dir}/app-error.log.%d{yyMMdd}">
+            <PatternLayout>
+                <Pattern>%d %-5p %c{2} - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>
+
+        <File name="APP-DEBUG" append="true" fileName="${app.log.dir}/debug-app.log">
+            <PatternLayout>
+                <Pattern>%d %-5p %c{2} - %m%n</Pattern>
+            </PatternLayout>
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+        </File>
+
+        <File name="APP-INFO" append="true" fileName="${app.log.dir}/info-app.log">
+            <PatternLayout>
+                <Pattern>%d %-5p %c{2} - %m%n</Pattern>
+            </PatternLayout>
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </File>
+
+        <RollingRandomAccessFile name="APP-API" append="true" fileName="${app.log.dir}/req-app.log"
+                                 filePattern="${app.log.dir}/req-app.log.%d{yyMMdd}">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>
+
+        <Async name="APP-API-ASYNC" bufferSize="2048">
+            <AppenderRef ref="APP-API"/>
+        </Async>
+    </Appenders>
+
+    <!-- ===================================================================== -->
+    <!--					Root logger 配置								   -->
+    <!-- ===================================================================== -->
+    <Loggers>
+        <Root level="${root.log.level}">
+            <AppenderRef ref="APP-DEBUG"/>
+            <AppenderRef ref="APP-INFO"/>
+            <AppenderRef ref="APP-ERROR"/>
+        </Root>
+
+        <Logger name="App-Debug" level="DEBUG" additivity="false">
+            <AppenderRef ref="APP-DEBUG"/>
+        </Logger>
+
+        <Logger name="App-Info" level="INFO" additivity="false">
+            <AppenderRef ref="APP-INFO"/>
+        </Logger>
+
+        <Logger name="App-Error" level="ERROR" additivity="false">
+            <AppenderRef ref="APP-ERROR"/>
+        </Logger>
+
+        <Logger name="App-Api" level="INFO" additivity="false">
+            <AppenderRef ref="APP-API"/>
+        </Logger>
+        <Logger name="App-Api-Async" level="INFO" additivity="false">
+            <AppenderRef ref="APP-API-ASYNC"/>
+        </Logger>
+    </Loggers>
+</Configuration>

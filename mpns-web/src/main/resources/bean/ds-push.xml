@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <!-- Spring Simple连接池 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:file:/tmp/.h2/mpush;MODE=MySQL;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1"/>
+        <property name="username" value="mpush"/>
+        <property name="password" value="mpush"/>
+    </bean>
+
+    <!-- 初始化数据表结构 -->
+    <!--<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
+        <jdbc:script location="classpath:sql/h2-schema.sql"/>
+        <jdbc:script location="classpath:sql/h2-data.sql" encoding="UTF-8"/>
+    </jdbc:initialize-database>-->
+</beans>
