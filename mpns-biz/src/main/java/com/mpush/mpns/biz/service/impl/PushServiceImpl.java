@@ -32,6 +32,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -43,19 +44,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class PushServiceImpl implements PushService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final PushSender mpusher = PushSender.create();
+    @Resource
+    private PushSender mpusher;
 
     private final AtomicLong msgIdSeq = new AtomicLong(1);//TODO业务自己处理
-
-    @PostConstruct
-    public void init() {
-        mpusher.start();
-    }
-
-    @PreDestroy
-    public void destroy() {
-        mpusher.stop();
-    }
 
     @Override
     public boolean notify(String userId, NotifyDO notifyDO) {

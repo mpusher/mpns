@@ -1,6 +1,7 @@
 package com.mpush.mpns.web.handler;
 
 import com.mpush.mpns.biz.domain.NotifyDO;
+import com.mpush.mpns.biz.service.MPushManager;
 import com.mpush.mpns.biz.service.PushService;
 import com.mpush.mpns.web.common.ApiResult;
 import io.vertx.core.eventbus.EventBus;
@@ -23,6 +24,9 @@ public class AdminHandler extends BaseHandler {
     @Resource
     private PushService pushService;
 
+    @Resource
+    private MPushManager mPushManager;
+
     @Override
     public String getRootPath() {
         return "/admin";
@@ -31,11 +35,23 @@ public class AdminHandler extends BaseHandler {
     @Override
     protected void initRouter(Router router) {
         router("/push", this::sendPush);
+        router("/list/servers", this::listMPushServers);
+        router("/get/onlineUserNum", this::getOnlineUserNum);
+
         initConsumer(eventBus);
     }
 
     protected void initConsumer(EventBus eventBus) {
         consumer("/getUser", this::onTestEvent);
+    }
+
+    public void listMPushServers(RoutingContext rc) {
+        rc.response().end(new ApiResult<>(mPushManager.getConnectServerList()).toString());
+    }
+
+    public void getOnlineUserNum(RoutingContext rc) {
+        String ip = rc.request().getParam("ip");
+        rc.response().end(new ApiResult<>(mPushManager.getOnlineUserNum(ip)).toString());
     }
 
     public void sendPush(RoutingContext rc) {
