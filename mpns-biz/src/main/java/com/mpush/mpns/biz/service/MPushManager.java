@@ -19,15 +19,14 @@
 
 package com.mpush.mpns.biz.service;
 
+import com.mpush.api.srd.ServiceDiscovery;
+import com.mpush.api.srd.ServiceNames;
+import com.mpush.api.srd.ServiceNode;
 import com.mpush.common.user.UserManager;
-import com.mpush.zk.cache.ZKServerNodeCache;
-import com.mpush.zk.listener.ZKServerNodeWatcher;
-import com.mpush.zk.node.ZKServerNode;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by ohun on 16/9/20.
@@ -38,10 +37,10 @@ import java.util.List;
 public class MPushManager {
 
     @Resource
-    private ZKServerNodeWatcher connectZKNodeWatcher;
+    private ServiceDiscovery serviceDiscovery;
 
-    public Collection<ZKServerNode> getConnectServerList() {
-        return connectZKNodeWatcher.getCache().values();
+    public Collection<ServiceNode> getConnectServerList() {
+        return serviceDiscovery.lookup(ServiceNames.CONN_SERVER);
     }
 
     public long getOnlineUserNum(String serverIp) {
