@@ -22,9 +22,12 @@ package com.mpush.mpns.biz.service;
 import com.mpush.api.srd.ServiceDiscovery;
 import com.mpush.api.srd.ServiceNames;
 import com.mpush.api.srd.ServiceNode;
+import com.mpush.client.MPushClient;
+import com.mpush.common.router.RemoteRouterManager;
 import com.mpush.common.user.UserManager;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Collection;
 
@@ -39,11 +42,25 @@ public class MPushManager {
     @Resource
     private ServiceDiscovery serviceDiscovery;
 
+    private UserManager userManager;
+
+    @Resource
+    private MPushClient mPushClient;
+
+    @PostConstruct
+    public void init() {
+        userManager = new UserManager(mPushClient.getCachedRemoteRouterManager());
+    }
+
     public Collection<ServiceNode> getConnectServerList() {
         return serviceDiscovery.lookup(ServiceNames.CONN_SERVER);
     }
 
     public long getOnlineUserNum(String serverIp) {
-        return UserManager.I.getOnlineUserNum(serverIp);
+        return userManager.getOnlineUserNum(serverIp);
+    }
+
+    public void kickUser(String userId) {
+        userManager.kickUser(userId);
     }
 }
